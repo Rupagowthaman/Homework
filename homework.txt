@@ -1,0 +1,133 @@
+ Aufgabe 1
+
+(a) Entschlüssele die in der Abbildung gezeigte Antwort von Asterix.
+
+		Asterix : DVWHULA
+
+(b) Entschlüssele die Nachricht: Surjudpplhuxqj lvw hlqidfk qxu phjd jxw.
+		
+		Vxumxgssokxatm oyz kotlgin tax skmg maz
+
+(b) Verschlüssele analog eine selbst gewählte Nachricht. Benutze jetzt eine
+Alphabetverschiebung um 7 Zeichen, die 'A' durch 'H' ersetzt ('B' durch 'I', 'C' durch 'I'). Gib
+die Nachricht zusammen mit dem Schlüssel an deine Nachbarin bzw. deinen Nachbarn
+weiter. Sie bz. er soll die verschlüsselte Nachricht dann wieder entschlüssel
+
+
+Have a nice day
+ohbl h upjl khf(key 7)
+kdyh d qlfh gdb (key 3)
+
+
+Aufgabe 2:
+(a) Das Python-Programm zur Buchstabenverschiebung funktioniert nicht, wenn man z.B.
+zeichen = 'T' und schluessel = 10 vorgibt. Teste und begründe.
+
+	After shifting 10 numbers after T there is special character.
+
+(b) Ändere das Python-Programm zur Buchstabenverschiebung so ab, dass es für alle
+sinnvollen Vorgaben zeichen = ... und schluessel = ... korrekt funktioniert.
+		
+		zeichen = 'H' schlussel =4
+
+zeichen = 'H'
+schluessel = 4
+zahl = ord(zeichen)
+neueZahl = zahl + schluessel
+neuesZeichen = chr(neueZahl)
+print(neuesZeichen)
+
+
+	 
+
+Aufgabe 3:
+
+Since the function is called inside the same function,it didn't work.
+Any function should be called in a main function(or in a different funtion).
+
+
+Aufgabe 4:
+
+Ergänze die Funktionsdefinitionen im folgenden Programmgerüst passend. Benutze für die
+Funktion verschiebung das (korrekte) Ergebnis aus Aufgabe 3. Die Funktionsdefinition
+zur Funktion verschluesselung kann sich am gezeigten Algorithmus orientieren. Günstig
+ist es, die Funktion verschiebung dabei zu benutzen. Teste mit verschiedenen
+Funktionsaufrufen
+
+
+def encrypt(text,key):
+    a=len(text)
+    c=" "
+    for i in text:
+        b = ord(i)
+        newnum= b + key 
+        if newnum == 91:
+            newnum = 65 
+        newval = chr(newnum)
+        c= c + newval
+    return c
+    print(f"The encrepted value is: " , +c)
+
+# Funktionsaufrufe
+if __name__=="__main__":
+    print(encrypt('ASTERIX', 3))
+
+Output:
+The encrepted value is:   DVWHULA
+
+
+
+Aufgabe 5:
+
+(a) Texte, die mit der Funktion verschluesselung verschlüsselt wurden, können mit
+derselben Funktion entschlüsselt werden, wenn man den Schlüssel geeignet wählt. Zeige
+das mit geeigneten Beispielen.
+(b) Die Entschlüsselung von Texten, die mit dem Verschiebeverfahren verschlüsselt wurden,
+sollen mit demselben Schlüssel entschlüsselt werden. Entwickle hierfür eine geeignete
+Funktion entschluesselung.
+
+
+def verschiebung(zeichen, schluessel):
+    zahl = ord(zeichen)
+    neueZahl = zahl + schluessel
+    neuesZeichen = chr(neueZahl)
+    return neuesZeichen
+
+def encrypt(text,key):
+    a=len(text)
+    c=" "
+    for i in text:
+        b = ord(i)
+        newnum= b + key 
+        if newnum == 91:
+            newnum = 65
+        newval = chr(newnum)
+        c= c + newval
+    return c
+    print(f"The encrepted value is: " , +c)
+
+
+def decrypt(text,key):
+    a=len(text)
+    c=" "
+    for i in text:
+        b = ord(i)
+        newnum= b - key 
+        if newnum == 62:
+            newnum = 88
+        newval = chr(newnum)
+        c= c + newval
+    return c
+    print(f"The encrepted value is: " , +c)
+
+
+if __name__=="__main__":
+    print(f'The encrypt letter for g is :', verschiebung('g',4))
+    print(f'The encrypted String :',encrypt('ASTERIX', 3))
+    print(f'The Decrypted String :', decrypt('DVWHULA',3))
+
+
+Output:
+The encrypt letter for g is : k
+The encrypted String :  DVWHULA
+The Decrypted String :  ASTERIX
