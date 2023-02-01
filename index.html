@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/css/uikit.min.css" />
+    <style>
+      .head-center{
+        text-align: center;
+        font-family:'Times New Roman', Times, serif;
+        }
+        body {
+        background-color: lightblue;
+            }
+  
+
+    </style>
+  
+  </head>
+
+<body>
+    <header>       
+      <div class="container" style="text-align:center">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">        
+            <a class="modal-container" href="#" uk-toggle="target:#g1-create-glitt-container">Create</a>
+          </div>
+        </nav>
+      </div>
+    
+      <div class="uk-container">
+          <h1 class = "head-center">Glitter</h1>
+        <div class="uk-container" id="gl-card-container"></div>
+      </div>
+    
+    </header>
+    <div id="g1-create-glitt-container" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <h3 class="uk-modal-title" >Create New Glitt</h3>
+          <div class="uk-modal-body">
+            <div class="uk-margin">
+              <div class="uk-form-label">Name</div>
+              <input class="uk-input" id="g1-glitt-firstname" name="firstname" placeholder="Your name" />
+            </div>
+      
+        <div class="uk-margin">
+          <div class="uk-form-label">Glitt</div>
+            <textarea 
+              class="uk-textarea" 
+              rows="5" 
+              placeholder="Enter your fancy pance nice Glitt here ..." 
+              id="gl-glitt-text"
+              name="text"
+              aria-label="Textarea"></textarea>
+
+         <div class="uk-modal-footer">
+           <div style="display: flex; justify-content: space-between;">
+              <button type="reset" class="uk-button" onclick="resetForm()">Reset</button>
+              <button class="uk-button uk-button-primary" onclick="saveGlitt()">Save</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit-icons.min.js"></script>
+
+<script src="user.js"></script>
+</html>
